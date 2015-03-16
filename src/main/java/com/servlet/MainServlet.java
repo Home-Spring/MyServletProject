@@ -11,13 +11,10 @@ import java.io.IOException;
 public class MainServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        req.setAttribute("text", "MyPage");
-
-        req.getRequestDispatcher("mypage.jsp").forward(req, resp);
-
+        request.setAttribute("text", "MyPage");
+        request.getRequestDispatcher("mypage.jsp").forward(request, response);
     }
-
 }
